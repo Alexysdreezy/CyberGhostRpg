@@ -66,13 +66,48 @@ const CharacterInfoForm = ({
                 </Grid>
                 <Grid item xs={6}>
                     <TextField
+                        type="number"
                         variant="outlined"
-                        label="Gênero"
-                        name="gender"
-                        value={values.gender}
+                        label="Level"
+                        name="lvl"
+                        value={values.lvl}
                         fullWidth
                         onChange={handleChange}
-                        error={errors.gender}
+                        error={errors.lvl}
+                    />
+                </Grid>
+                <Grid item xs={6}>
+                    <TextField
+                        variant="outlined"
+                        label="Profissão"
+                        name="profission"
+                        value={values.profission}
+                        fullWidth
+                        onChange={handleChange}
+                        error={errors.profission}
+                    />
+                </Grid>
+                <Grid item xs={6}>
+                    <TextField
+                        type="number"
+                        variant="outlined"
+                        label="Idade"
+                        name="age"
+                        value={values.age}
+                        fullWidth
+                        onChange={handleChange}
+                        error={errors.age}
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField
+                        variant="outlined"
+                        label="Biografia"
+                        name="bio"
+                        value={values.bio}
+                        fullWidth
+                        onChange={handleChange}
+                        error={errors.bio}
                     />
                 </Grid>
                 <Grid item xs={12}>
