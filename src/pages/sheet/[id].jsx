@@ -372,7 +372,7 @@ function Sheet({
                           primaryColor="#0079c9"
                           secondaryColor="#013659"
                           onClick={() => {
-                            hitPointsModal.appear();
+                            SanPointsModal.appear();
                           }}
                         />
                         </Grid>
@@ -391,7 +391,7 @@ function Sheet({
                           primaryColor="#9000c9"
                           secondaryColor="#2e0040"
                           onClick={() => {
-                            hitPointsModal.appear();
+                            ParPointsModal.appear();
                           }}
                         />
                       </Grid>
