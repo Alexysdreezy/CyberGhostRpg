@@ -149,16 +149,6 @@ function Portrait({
                 </span>
               </div>
           </div>
-          <div>
-              <div className={classes.name} style={{ display: showOnly.name ? 'block' : 'none' }}>
-                {character.name}
-              </div>
-              <div style={{ display: showOnly.stats ? 'block' : 'none' }}>
-                <span className={classes.SanPoints}>
-                  {SanPoints.current}/{SanPoints.max}
-                </span>
-              </div>
-          </div>
         </div>
       </React.Fragment>
     )
