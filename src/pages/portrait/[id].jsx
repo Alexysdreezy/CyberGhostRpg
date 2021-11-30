@@ -65,6 +65,12 @@ function Portrait({
       max: 0
     });
 
+    const [SanPoints, setSanPoints] = useState({
+      current: 0,
+      max: 0
+    });
+
+
     const updateHitPoints = data => {
       if(data.current === 0) {
         setIsDead(true);
@@ -146,6 +152,9 @@ function Portrait({
               <div style={{ display: showOnly.stats ? 'block' : 'none' }}>
                 <span className={classes.hitPoints}>
                   {hitPoints.current}/{hitPoints.max}
+                </span>
+                <span className={classes.SanPoints}>
+                  {SanPoints.current}/{SanPoints.max}
                 </span>
               </div>
           </div>
