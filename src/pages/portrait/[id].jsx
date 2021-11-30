@@ -149,6 +149,16 @@ function Portrait({
                 </span>
               </div>
           </div>
+          <div>
+              <div className={classes.name} style={{ display: showOnly.name ? 'block' : 'none' }}>
+                {character.name}
+              </div>
+              <div style={{ display: showOnly.stats ? 'block' : 'none' }}>
+                <span className={classes.SanPoints}>
+                  {SanPoints.current}/{SanPoints.max}
+                </span>
+              </div>
+          </div>
         </div>
       </React.Fragment>
     )
@@ -174,6 +184,13 @@ const styles = (theme) => ({
     fontSize: '62px',
     color: '#ffe2e2',
     textShadow: '0 0 10px #ff0000'
+  },
+
+  SanPoints: {
+    textTransform: 'uppercase',
+    fontSize: '62px',
+    color: '#e2f0ff',
+    textShadow: '0 0 10px #0077ff'
   },
 
   deadPicture: {
