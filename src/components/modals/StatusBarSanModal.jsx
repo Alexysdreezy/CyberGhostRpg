@@ -50,7 +50,7 @@ function StatusBarSanModal({
 
     const getTitle = () => {
         switch (type) {
-            case 'sn': return 'Alterar pontos de Sanidade';
+            case 'sn': return 'Alterar pontos de sanidade';
             default: return 'Alterar pontos';
         }
     }
