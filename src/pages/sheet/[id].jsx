@@ -121,8 +121,8 @@ function Sheet({
   const onSanPointsModalSubmit = async newData => {
     return new Promise((resolve, reject) => {
       const data = {
-        current_hit_points: Number(newData.current),
-        max_hit_points: Number(newData.max)
+        current_san_points: Number(newData.current),
+        max_san_points: Number(newData.max)
       }
 
       api
@@ -132,7 +132,7 @@ function Sheet({
 
           resolve();
 
-          socket.emit('update_san_points', { character_id: character.id, current: data.current_hit_points, max: data.max_hit_points });
+          socket.emit('update_san_points', { character_id: character.id, current: data.current_san_points, max: data.max_san_points });
         })
         .catch(err => {
           alert(`Erro ao atualizar a sanidade!`, err);
@@ -144,8 +144,8 @@ function Sheet({
   const onParPointsModalSubmit = async newData => {
     return new Promise((resolve, reject) => {
       const data = {
-        current_hit_points: Number(newData.current),
-        max_hit_points: Number(newData.max)
+        current_par_points: Number(newData.current),
+        max_par_points: Number(newData.max)
       }
 
       api
@@ -155,7 +155,7 @@ function Sheet({
 
           resolve();
 
-          socket.emit('update_par_points', { character_id: character.id, current: data.current_hit_points, max: data.max_hit_points });
+          socket.emit('update_par_points', { character_id: character.id, current: data.current_par_points, max: data.max_par_points });
         })
         .catch(err => {
           alert(`Erro ao atualizar a exposição paranormal!`, err);
@@ -196,8 +196,8 @@ function Sheet({
       }}
       handleClose={close}
       data={{
-        current: character.current_hit_points,
-        max: character.max_hit_points
+        current: character.current_par_points,
+        max: character.max_par_points
       }}
     />
   ));
@@ -209,8 +209,8 @@ function Sheet({
       }}
       handleClose={close}
       data={{
-        current: character.current_hit_points,
-        max: character.max_hit_points
+        current: character.current_san_points,
+        max: character.max_san_points
       }}
     />
   ));
@@ -366,9 +366,9 @@ function Sheet({
                       </Grid>
                       <Grid item xs={12}>
                         <StatusBarSan
-                          current={character.current_hit_points}
-                          max={character.max_hit_points}
-                          label={`${character.current_hit_points}/${character.max_hit_points}`}
+                          current={character.current_san_points}
+                          max={character.max_san_points}
+                          label={`${character.current_san_points}/${character.max_san_points}`}
                           primaryColor="#0079c9"
                           secondaryColor="#013659"
                           onClick={() => {
@@ -385,9 +385,9 @@ function Sheet({
                       </Grid>
                       <Grid item xs={12}>
                         <StatusBarPar
-                          current={character.current_hit_points}
-                          max={character.max_hit_points}
-                          label={`${character.current_hit_points}/${character.max_hit_points}`}
+                          current={character.current_par_points}
+                          max={character.max_par_points}
+                          label={`${character.current_par_points}/${character.max_par_points}`}
                           primaryColor="#9000c9"
                           secondaryColor="#2e0040"
                           onClick={() => {
