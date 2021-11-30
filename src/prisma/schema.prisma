@@ -14,7 +14,7 @@ model Character {
   gender String?
   player_name String?
   bio String?
-  lvl Int
+  lvl Int?
   profission String?
   current_hit_points Int @default(0)
   max_hit_points Int @default(0)
