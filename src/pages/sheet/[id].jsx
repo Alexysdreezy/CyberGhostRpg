@@ -365,7 +365,7 @@ function Sheet({
                         <span>Sanidade</span>
                       </Grid>
                       <Grid item xs={12}>
-                        <StatusBar
+                        <StatusBarSan
                           current={character.current_san_points}
                           max={character.max_san_points}
                           label={`${character.current_san_points}/${character.max_san_points}`}
@@ -384,7 +384,7 @@ function Sheet({
                         <span>Exposição Paranormal</span>
                       </Grid>
                       <Grid item xs={12}>
-                        <StatusBar
+                        <StatusBarPar
                           current={character.current_par_points}
                           max={character.max_par_points}
                           label={`${character.current_par_points}/${character.max_par_points}`}
