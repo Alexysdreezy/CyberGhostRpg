@@ -22,9 +22,9 @@ import Loader from './Loader'
 
 import StatusBar from './StatusBar'
 
-import StatusBar from './StatusBarPar'
+import StatusBarPar from './StatusBarPar'
 
-import StatusBar from './StatusBarSan'
+import StatusBarSan from './StatusBarSan'
 
 import TextFieldIcon from './TextFieldIcon'
 
