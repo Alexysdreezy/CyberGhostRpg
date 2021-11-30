@@ -118,7 +118,7 @@ function Sheet({
         });
     });
   }
-  const onHitPointsModalSubmit = async newData => {
+  const onSanPointsModalSubmit = async newData => {
     return new Promise((resolve, reject) => {
       const data = {
         current_san_points: Number(newData.current),
@@ -132,7 +132,7 @@ function Sheet({
 
           resolve();
 
-          socket.emit('update_hit_points', { character_id: character.id, current: data.current_san_points, max: data.max_san_points });
+          socket.emit('update_san_points', { character_id: character.id, current: data.current_san_points, max: data.max_san_points });
         })
         .catch(err => {
           alert(`Erro ao atualizar a sanidade!`, err);
@@ -141,7 +141,7 @@ function Sheet({
         });
     });
   }
-  const onHitPointsModalSubmit = async newData => {
+  const onParPointsModalSubmit = async newData => {
     return new Promise((resolve, reject) => {
       const data = {
         current_par_points: Number(newData.current),
@@ -155,7 +155,7 @@ function Sheet({
 
           resolve();
 
-          socket.emit('update_hit_points', { character_id: character.id, current: data.current_par_points, max: data.max_par_points });
+          socket.emit('update_par_points', { character_id: character.id, current: data.current_par_points, max: data.max_par_points });
         })
         .catch(err => {
           alert(`Erro ao atualizar a exposição paranormal!`, err);
