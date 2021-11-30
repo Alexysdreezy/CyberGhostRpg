@@ -89,14 +89,13 @@ const CharacterInfoForm = ({
                 </Grid>
                 <Grid item xs={6}>
                     <TextField
-                        type="number"
                         variant="outlined"
-                        label="Idade"
-                        name="age"
-                        value={values.age}
+                        label="Gênero"
+                        name="gender"
+                        value={values.gender}
                         fullWidth
                         onChange={handleChange}
-                        error={errors.age}
+                        error={errors.gender}
                     />
                 </Grid>
                 <Grid item xs={12}>
