@@ -19,7 +19,7 @@ function StatusBarParModal({
 }) {
     const [newData, setNewData] = useState({
         current: 0,
-        max: 0
+        max: 100
     });
 
     useEffect(() => {
@@ -36,7 +36,7 @@ function StatusBarParModal({
     const resetState = () => {
         return setNewData({
             current: 0,
-            max: 0
+            max: 100
         });
     }
 
