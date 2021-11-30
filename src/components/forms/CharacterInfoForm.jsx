@@ -14,7 +14,10 @@ const CharacterInfoForm = ({
             name: initialValues.name,
             player_name: initialValues.player_name,
             age: initialValues.age,
-            gender: initialValues.gender
+            gender: initialValues.gender,
+            lvl: initialValues.lvl,
+            profission: initialValues.profission,
+            bio: initialValues.bio,
         }}
         onSubmit={(values, { setSubmitting }) => {
             onSubmit(values).then(() => setSubmitting(false));
