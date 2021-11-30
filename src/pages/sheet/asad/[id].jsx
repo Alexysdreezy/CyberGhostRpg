@@ -12,7 +12,7 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
+  Header, Section, StatusBar, SheetEditableRow, 
 
   DiceRollModal, StatusBarModal, ChangePictureModal
 } from '../../components';
@@ -118,52 +118,7 @@ function Sheet({
         });
     });
   }
-  const onHitPointsModalSubmit = async newData => {
-    return new Promise((resolve, reject) => {
-      const data = {
-        current_san_points: Number(newData.current),
-        max_san_points: Number(newData.max)
-      }
 
-      api
-        .put(`/character/${character.id}`, data)
-        .then(() => {
-          updateCharacterState(data);
-
-          resolve();
-
-          socket.emit('update_hit_points', { character_id: character.id, current: data.current_san_points, max: data.max_san_points });
-        })
-        .catch(err => {
-          alert(`Erro ao atualizar a sanidade!`, err);
-
-          reject();
-        });
-    });
-  }
-  const onHitPointsModalSubmit = async newData => {
-    return new Promise((resolve, reject) => {
-      const data = {
-        current_par_points: Number(newData.current),
-        max_par_points: Number(newData.max)
-      }
-
-      api
-        .put(`/character/${character.id}`, data)
-        .then(() => {
-          updateCharacterState(data);
-
-          resolve();
-
-          socket.emit('update_hit_points', { character_id: character.id, current: data.current_par_points, max: data.max_par_points });
-        })
-        .catch(err => {
-          alert(`Erro ao atualizar a exposição paranormal!`, err);
-
-          reject();
-        });
-    });
-  }
   useEffect(() => {
     setCharacter(rawCharacter);
   }, [rawCharacter]);
@@ -188,32 +143,7 @@ function Sheet({
       }}
     />
   ));
-  const hitPointsModal = useModal(({ close }) => (
-    <StatusBarParModal
-      type="hp"
-      onSubmit={async newData => {
-        onHitPointsModalSubmit(newData).then(() => close());
-      }}
-      handleClose={close}
-      data={{
-        current: character.current_par_points,
-        max: character.max_par_points
-      }}
-    />
-  ));
-  const hitPointsModal = useModal(({ close }) => (
-    <StatusBarSanModal
-      type="hp"
-      onSubmit={async newData => {
-        onHitPointsModalSubmit(newData).then(() => close());
-      }}
-      handleClose={close}
-      data={{
-        current: character.current_san_points,
-        max: character.max_san_points
-      }}
-    />
-  ));
+
   const diceRollModal = useModal(({ close }) => (
     <DiceRollModal
       onDiceRoll={rollData => {
@@ -365,10 +295,10 @@ function Sheet({
                         <span>Sanidade</span>
                       </Grid>
                       <Grid item xs={12}>
-                        <StatusBar
-                          current={character.current_san_points}
-                          max={character.max_san_points}
-                          label={`${character.current_san_points}/${character.max_san_points}`}
+                        <StatusBarSan
+                          current={character.current_hit_points}
+                          max={character.max_hit_points}
+                          label={`${character.current_hit_points}/${character.max_hit_points}`}
                           primaryColor="#0079c9"
                           secondaryColor="#013659"
                           onClick={() => {
@@ -384,10 +314,10 @@ function Sheet({
                         <span>Exposição Paranormal</span>
                       </Grid>
                       <Grid item xs={12}>
-                        <StatusBar
-                          current={character.current_par_points}
-                          max={character.max_par_points}
-                          label={`${character.current_par_points}/${character.max_par_points}`}
+                        <StatusBarPar
+                          current={character.current_hit_points}
+                          max={character.max_hit_points}
+                          label={`${character.current_hit_points}/${character.max_hit_points}`}
                           primaryColor="#9000c9"
                           secondaryColor="#2e0040"
                           onClick={() => {
