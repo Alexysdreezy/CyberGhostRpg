@@ -188,11 +188,11 @@ function Sheet({
       }}
     />
   ));
-  const hitPointsModal = useModal(({ close }) => (
+  const ParPointsModal = useModal(({ close }) => (
     <StatusBarParModal
-      type="hp"
+      type="ep"
       onSubmit={async newData => {
-        onHitPointsModalSubmit(newData).then(() => close());
+        onParPointsModalSubmit(newData).then(() => close());
       }}
       handleClose={close}
       data={{
@@ -201,11 +201,11 @@ function Sheet({
       }}
     />
   ));
-  const hitPointsModal = useModal(({ close }) => (
+  const SanPointsModal = useModal(({ close }) => (
     <StatusBarSanModal
-      type="hp"
+      type="sn"
       onSubmit={async newData => {
-        onHitPointsModalSubmit(newData).then(() => close());
+        oSanPointsModalSubmit(newData).then(() => close());
       }}
       handleClose={close}
       data={{
