@@ -82,6 +82,11 @@ function Portrait({
         current: data.current,
         max: data.max
       });
+
+      setSanPoints({
+        current: data.current,
+        max: data.max
+      });
     }
 
     const getCharacterPicture = () => {
@@ -112,11 +117,6 @@ function Portrait({
       updateHitPoints({
         current: character.current_hit_points,
         max: character.max_hit_points
-      });
-
-      updateSanPoints({
-        current: character.current_san_points,
-        max: character.max_san_points
       });
     }, [character, showOptions]);
 
