@@ -82,6 +82,14 @@ function Portrait({
         current: data.current,
         max: data.max
       });
+    }
+
+    const updateSanPoints = data => {
+      if(data.current === 0) {
+        setIsDead(true);
+      } else {
+        setIsDead(true);
+      }
 
       setSanPoints({
         current: data.current,
