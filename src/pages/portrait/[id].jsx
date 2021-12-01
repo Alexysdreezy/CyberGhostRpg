@@ -86,9 +86,9 @@ function Portrait({
 
     const updateSanPoints = data => {
       if(data.current === 0) {
-        setIsDead(true);
+        setIsDead(false);
       } else {
-        setIsDead(true);
+        setIsDead(false);
       }
 
       setSanPoints({
