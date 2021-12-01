@@ -121,6 +121,10 @@ function Portrait({
       socket.on('update_hit_points', data => {
         updateHitPoints(data);
       });
+      
+      socket.on('update_san_points', data => {
+        updateSanPoints(data);
+      });
     }, [character]);
 
     if(!character) {
