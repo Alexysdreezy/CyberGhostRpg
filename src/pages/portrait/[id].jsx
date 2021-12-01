@@ -162,6 +162,8 @@ function Portrait({
                 <span className={classes.hitPoints}>
                   {hitPoints.current}/{hitPoints.max}
                 </span>
+              </div>
+              <div style={{ display: showOnly.stats ? 'block' : 'none' }}>
                 <span className={classes.SanPoints}>
                   {SanPoints.current}/{SanPoints.max}
                 </span>
