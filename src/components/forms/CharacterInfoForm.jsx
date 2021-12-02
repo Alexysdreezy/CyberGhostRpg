@@ -109,6 +109,7 @@ const CharacterInfoForm = ({
                         value={values.bio}
                         fullWidth
                         multiline
+                        maxRows={4}
                         onChange={handleChange}
                         error={errors.bio}
                     />
