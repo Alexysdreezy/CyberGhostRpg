@@ -150,7 +150,8 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             gap: '10px',
             marginTop: '10px'
           }}
-        ></div>
+        >
+          </div>
           <div>
             <Button
               variant="outlined"
