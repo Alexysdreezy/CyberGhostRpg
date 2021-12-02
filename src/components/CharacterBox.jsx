@@ -44,6 +44,10 @@ const styles = (theme) => ({
   hpInfo: {
     fontWeight: 'bold',
   },
+  
+  snInfo: {
+    fontWeight: 'bold',
+  },
 
   mainInformations: {
     display: 'flex',
