@@ -44,10 +44,6 @@ const styles = (theme) => ({
   hpInfo: {
     fontWeight: 'bold',
   },
-  
-  snInfo: {
-    fontWeight: 'bold',
-  },
 
   mainInformations: {
     display: 'flex',
@@ -118,16 +114,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
           <span className={classes.hpInfo}>
             {character.current_hit_points}/{character.max_hit_points}
           </span>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '10px',
-            marginTop: '10px'
-          }}
-        >
+          
           <div
           style={{
             display: 'flex',
@@ -152,10 +139,20 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            marginTop: '0px'
+            marginTop: '5px'
           }}
         >
           </div>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px',
+            marginTop: '10px'
+          }}
+        >
           <div>
             <Button
               variant="outlined"
