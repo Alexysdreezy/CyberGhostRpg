@@ -108,6 +108,7 @@ const CharacterInfoForm = ({
                         name="bio"
                         value={values.bio}
                         fullWidth
+                        multiline
                         onChange={handleChange}
                         error={errors.bio}
                     />
