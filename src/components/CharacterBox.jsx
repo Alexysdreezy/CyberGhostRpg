@@ -9,7 +9,9 @@ import {
   Delete as DeleteIcon,
   Favorite as HeartIcon,
   FavoriteBorder as HeartIconNoLife,
-  VideoCameraFront as CameraIcon
+  VideoCameraFront as CameraIcon,
+  EmojiEmotions as SanIcon,
+  InsertEmoticon as SannoSan,
 } from '@mui/icons-material';
 
 import useModal from '../hooks/useModal';
@@ -122,6 +124,33 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             marginTop: '10px'
           }}
         >
+          <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#0a8fe8',
+            gap: '3px',
+          }}
+        >
+          {character.current_san_points === 0 ? (
+            <SannoSan />
+          ) : (
+            <SanIcon />
+          )}
+          <span className={classes.snInfo}>
+            {character.current_san_points}/{character.max_san_points}
+          </span>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px',
+            marginTop: '10px'
+          }}
+        ></div>
           <div>
             <Button
               variant="outlined"
