@@ -148,7 +148,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            marginTop: '10px'
+            marginTop: '5px'
           }}
         >
           </div>
