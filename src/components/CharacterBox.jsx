@@ -44,6 +44,10 @@ const styles = (theme) => ({
   hpInfo: {
     fontWeight: 'bold',
   },
+  
+  snInfo: {
+    fontWeight: 'bold',
+  },
 
   mainInformations: {
     display: 'flex',
@@ -148,7 +152,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            marginTop: '5px'
+            marginTop: '0px'
           }}
         >
           </div>
