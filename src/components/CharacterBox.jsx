@@ -143,6 +143,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
+            marginLeft: '8px',
             marginTop: '5px'
           }}
         >
