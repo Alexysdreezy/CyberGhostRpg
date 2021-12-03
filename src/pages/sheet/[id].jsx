@@ -473,8 +473,13 @@ function Sheet({
                           }}
                           onInput={newValue => {
                             updateCharacterSkillValue(each, newValue);
-                          }}
+                          }}                         
                         />
+                        <FormControlLabel
+            control={
+              <Checkbox checked={skill} onChange={handleChange} name="skill" />
+            }
+          />
                       </Grid>
                     ))
                   }
