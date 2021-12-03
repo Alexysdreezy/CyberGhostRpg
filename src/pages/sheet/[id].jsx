@@ -6,6 +6,11 @@ import { useRouter } from 'next/router';
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import { PrismaClient } from '@prisma/client';
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 import { api } from '../../utils';
 
@@ -24,6 +29,22 @@ import {
 import useModal from '../../hooks/useModal';
 
 const prisma = new PrismaClient();
+
+export default function ControlledCheckbox() {
+  const [checked, setChecked] = React.useState(true);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={handleChange}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
+  );
+}
 
 export const getServerSideProps = async ({ params }) => {
   const characterId = isNaN(params.id) ? null : Number(params.id);
