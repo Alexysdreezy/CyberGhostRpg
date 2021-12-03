@@ -30,15 +30,6 @@ import useModal from '../../hooks/useModal';
 
 const prisma = new PrismaClient();
 
-    return (
-    <Checkbox
-      checked={checked}
-      onChange={handleChange}
-      inputProps={{ 'aria-label': 'controlled' }}
-    />
-  );
-}
-
 export const getServerSideProps = async ({ params }) => {
   const characterId = isNaN(params.id) ? null : Number(params.id);
 
