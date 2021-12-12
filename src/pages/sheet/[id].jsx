@@ -58,6 +58,14 @@ export const getServerSideProps = async ({ params }) => {
     }
   });
 
+  const item = await prisma.item.findMany({
+    orderBy: [
+      {
+        name: 'asc',
+      },
+    ],
+  });
+
   if(!character) {
     return {
       props: {

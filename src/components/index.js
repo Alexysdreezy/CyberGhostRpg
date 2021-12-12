@@ -7,6 +7,7 @@ import CreateCharacterModal from './modals/CreateCharacterModal'
 import ConfirmationModal from './modals/ConfirmationModal'
 import AttributeModal from './modals/AttributeModal'
 import SkillModal from './modals/SkillModal'
+import ItensModal from './modals/ItensModal'
 import StatusBarModal from './modals/StatusBarModal'
 import StatusBarParModal from './modals/StatusBarParModal'
 import StatusBarSanModal from './modals/StatusBarSanModal'
@@ -38,6 +39,7 @@ export {
     ConfirmationModal,
     AttributeModal,
     SkillModal,
+    ItensModal,
     StatusBarModal,
     StatusBarParModal,
     StatusBarSanModal,
