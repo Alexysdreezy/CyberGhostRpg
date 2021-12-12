@@ -12,9 +12,9 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
+  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, AddBox, EditableRow,
 
-  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal
+  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal, ItensModal,
 } from '../../components';
 
 import {
