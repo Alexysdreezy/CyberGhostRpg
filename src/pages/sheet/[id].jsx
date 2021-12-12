@@ -6,9 +6,6 @@ import { useRouter } from 'next/router';
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import { PrismaClient } from '@prisma/client';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 
 import { api } from '../../utils';
 
@@ -27,22 +24,6 @@ import {
 import useModal from '../../hooks/useModal';
 
 const prisma = new PrismaClient();
-
-export default function FormControlLabelPosition() {
-  return (
-    <FormControl component="fieldset">
-      <FormLabel component="legend">Label placement</FormLabel>
-      <FormGroup aria-label="position" row>
-        <FormControlLabel
-          value={values.skill_id}
-          control={<Checkbox />}
-          label=""
-          labelPlacement="start"
-        />
-        </FormGroup>
-    </FormControl>
-  );
-}
 
 export const getServerSideProps = async ({ params }) => {
   const characterId = isNaN(params.id) ? null : Number(params.id);
@@ -454,13 +435,12 @@ function Sheet({
               </Section>
             </Grid>
             <Grid item xs={12} md={6}>
-             <section
-                title="Pericias em acesso rapido"
-                >
-                  <Grid container item xs={12} spacing={3}>
-                    {}
-                  </Grid>
-                </section>
+              <section
+              title="Pericias em Acesso Rapido"
+              >
+                <Grid container item xs={12} spacing={3}>
+                </Grid>
+              </section>
             </Grid>
             <Grid item xs={12} >
               <Section
@@ -496,6 +476,50 @@ function Sheet({
                 </Grid>
               </Section>
             </Grid>
+            <Grid item xs={12} >
+                  <Section
+                    title="Inventário"
+                    renderButton={() => (
+                      <Button
+                        variant="outlined"
+                        style={{
+                          display: 'flex',
+                          alignSelf: 'center',
+                        }}
+                        onClick={() => ItensModal.appear({ operation: 'create' })}
+                      >
+                        <AddIcon />
+                      </Button>
+                    )}
+                  >
+                    <Grid
+                      item
+                      container
+                      xs={12}
+                      spacing={2}
+                      className={classes.scrollableBox}
+                    >
+                      {item.map((item, index) => (
+                        <Grid item xs={12} key={index}>
+                          <EditableRow
+                            data={item}
+                            editRow={(data) => {
+                              ItensModal.appear({ operation: 'edit', data })
+                            }}
+                            deleteRow={(data) => {
+                              confirmationModal.appear({
+                                title: 'Apagar item',
+                                text: 'Deseja apagar este item?',
+                                data: { id: data.id, type: 'item' },
+                              });
+                            }}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Section>
+                </Grid>
+
           </Grid>
         </Grid>
       </Container>

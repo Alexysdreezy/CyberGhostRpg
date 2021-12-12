@@ -32,6 +32,7 @@ model Character {
   attributes CharacterAttributes[]
   skills CharacterSkills[]
   rolls Roll[]
+  item CharacterItens[]
   
   @@map("character")
 }
@@ -80,6 +81,29 @@ model Skill {
 
   @@map("skills")
 }
+
+model CharacterItens {
+  character Character @relation(fields: [character_id], references: [id])
+  character_id Int
+  item Item @relation(fields: [item_id], references: [id])
+  item_id Int
+
+  value String?
+
+  @@id([character_id, item_id])
+  @@map("character_item")
+}
+
+model Item {
+  id Int @id @default(autoincrement())
+  name String
+  description String?
+
+  characters CharacterItens[]
+
+  @@map("item")
+}
+
 
 model Roll {
   id Int @id @default(autoincrement())
