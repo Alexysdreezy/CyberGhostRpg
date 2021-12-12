@@ -21,7 +21,6 @@ function ItensModal({
 }) {
     const [itens, setItem] = useState({
         name: '',
-        description: ''
     });
 
     useEffect(() => {
@@ -31,14 +30,12 @@ function ItensModal({
 
         setItem({
             name: data.name,
-            description: data.description
         });
     }, [data]);
     
     const resetState = () => {
         return setItem({
             name: '',
-            description: ''
         });
     }
 
@@ -114,32 +111,7 @@ function ItensModal({
                             }
                             spellCheck={false}
                         />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <TextField
-                            style={{
-                                marginTop: '15px'
-                            }}
-                            autoFocus
-                            label="Descrição"
-                            type="text"
-                            fullWidth
-                            multiline
-                            variant="standard"
-                            value={item.description}
-                            onChange={
-                                ({ target }) => {
-                                    const value = target.value;
-
-                                    setItem(prevState => ({
-                                        ...prevState,
-                                        description: value
-                                    }));
-                                }
-                            }
-                            spellCheck={false}
-                        />
-                    </Grid>
+                    </Grid>                   
                 </Grid>
             </DialogContent>
             <DialogActions>

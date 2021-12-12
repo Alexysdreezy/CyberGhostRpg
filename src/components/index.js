@@ -17,6 +17,7 @@ import DiceRollModal from './modals/DiceRollModal'
 import ChangePictureModal from './modals/ChangePictureModal'
 
 import EditableRow from './EditableRow'
+import ItemRow from './ItemRow'
 import SheetEditableRow from './SheetEditableRow'
 
 import Loader from './Loader'
@@ -49,6 +50,7 @@ export {
     ChangePictureModal,
 
     EditableRow,
+    ItemRow,
     Loader,
 
     StatusBar,

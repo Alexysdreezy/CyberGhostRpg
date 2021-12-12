@@ -16,7 +16,7 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, AddBox, EditableRow,
+  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, ItemRow,
 
   DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal, ItensModal,
 } from '../../components';
@@ -513,7 +513,7 @@ function Sheet({
                     >
                       {item.map((item, index) => (
                         <Grid item xs={12} key={index}>
-                          <EditableRow
+                          <ItemRow
                             data={item}
                             editRow={(data) => {
                               ItensModal.appear({ operation: 'edit', data })
