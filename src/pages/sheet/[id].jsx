@@ -15,7 +15,7 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
+  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, EditableRow, DeleteRow,
 
   DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal, 
 } from '../../components';
