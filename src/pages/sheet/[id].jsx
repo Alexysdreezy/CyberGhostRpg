@@ -3,8 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
 
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
@@ -15,9 +18,9 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, EditableRow, DeleteRow,
+  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
 
-  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal, 
+  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal
 } from '../../components';
 
 import {
@@ -25,7 +28,6 @@ import {
 } from '../../components/forms';
 
 import useModal from '../../hooks/useModal';
-import ItemModal from '../../components/modals/ItemModal';
 
 const prisma = new PrismaClient();
 
@@ -481,47 +483,24 @@ function Sheet({
               </Section>
             </Grid>
             <Grid item xs={12} >
-            <Section
-                    title="Inventário"
-                    renderButton={() => (
-                      <Button
-                        variant="outlined"
-                        style={{
-                          display: 'flex',
-                          alignSelf: 'center',
-                        }}
-                        onClick={() => ItemModal.appear({ operation: 'create' })}
-                      >
-                        <AddIcon />
-                      </Button>
-                    )}
-                  >
-                    <Grid
-                      item
-                      container
-                      xs={12}
-                      spacing={2}
-                      className={classes.scrollableBox}
-                    >
-                      {item.map((item, index) => (
-                        <Grid item xs={12} key={index}>
-                          <EditableRow
-                            data={item}
-                            editRow={(data) => {
-                              ItemModal.appear({ operation: 'edit', data });
-                            }}
-                            deleteRow={(data) => {
-                              confirmationModal.appear({
-                                title: 'Apagar Item',
-                                text: 'Deseja apagar este item?',
-                                data: { id: data.id, type: 'item' },
-                              });
-                            }}
-                          />
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Section>
+              <Section
+                title="Inventário"
+              >
+                <Grid container item xs={12} spacing={3}>
+                <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+                  <InputLabel htmlFor="standard-adornment-amount">Dinheiro</InputLabel>
+                  <Input
+            id="standard-adornment-amount"
+            value={values.amount}
+            onChange={handleChange('amount')}
+            startAdornment={<InputAdornment position="start">£</InputAdornment>}
+                  />
+               </FormControl>
+                    <IconButton color="secondary" aria-label="adicionar item">
+                    <AddIcon />
+                  </IconButton>
+                </Grid>
+              </Section>
             </Grid>
           </Grid>
         </Grid>
