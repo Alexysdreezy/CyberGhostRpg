@@ -17,7 +17,7 @@ import socket from '../../utils/socket';
 import {
   Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
 
-  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal, ItemModal,
+  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal, 
 } from '../../components';
 
 import {
@@ -481,20 +481,47 @@ function Sheet({
               </Section>
             </Grid>
             <Grid item xs={12} >
-              <Section
-                title="Inventário"
-              >
-                <Grid container item xs={12} spacing={3}>
-                  {
-                    <IconButton color="secondary" aria-label="adicionar item" onClick={()=> ItemModal.appear({ operation: 'create'})}>
-                    <AddIcon /> 
-                  </IconButton>
-
-                   
-                    
-                  }
-                </Grid>
-              </Section>
+            <Section
+                    title="Inventário"
+                    renderButton={() => (
+                      <Button
+                        variant="outlined"
+                        style={{
+                          display: 'flex',
+                          alignSelf: 'center',
+                        }}
+                        onClick={() => ItemModal.appear({ operation: 'create' })}
+                      >
+                        <AddIcon />
+                      </Button>
+                    )}
+                  >
+                    <Grid
+                      item
+                      container
+                      xs={12}
+                      spacing={2}
+                      className={classes.scrollableBox}
+                    >
+                      {item.map((item, index) => (
+                        <Grid item xs={12} key={index}>
+                          <EditableRow
+                            data={item}
+                            editRow={(data) => {
+                              ItemModal.appear({ operation: 'edit', data });
+                            }}
+                            deleteRow={(data) => {
+                              confirmationModal.appear({
+                                title: 'Apagar Item',
+                                text: 'Deseja apagar este item?',
+                                data: { id: data.id, type: 'item' },
+                              });
+                            }}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Section>
             </Grid>
           </Grid>
         </Grid>
