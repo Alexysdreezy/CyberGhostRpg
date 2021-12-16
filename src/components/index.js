@@ -7,7 +7,6 @@ import CreateCharacterModal from './modals/CreateCharacterModal'
 import ConfirmationModal from './modals/ConfirmationModal'
 import AttributeModal from './modals/AttributeModal'
 import SkillModal from './modals/SkillModal'
-import ItensModal from './modals/ItensModal'
 import StatusBarModal from './modals/StatusBarModal'
 import StatusBarParModal from './modals/StatusBarParModal'
 import StatusBarSanModal from './modals/StatusBarSanModal'
@@ -17,7 +16,6 @@ import DiceRollModal from './modals/DiceRollModal'
 import ChangePictureModal from './modals/ChangePictureModal'
 
 import EditableRow from './EditableRow'
-import ItemRow from './ItemRow'
 import SheetEditableRow from './SheetEditableRow'
 
 import Loader from './Loader'
@@ -40,7 +38,6 @@ export {
     ConfirmationModal,
     AttributeModal,
     SkillModal,
-    ItensModal,
     StatusBarModal,
     StatusBarParModal,
     StatusBarSanModal,
@@ -50,7 +47,6 @@ export {
     ChangePictureModal,
 
     EditableRow,
-    ItemRow,
     Loader,
 
     StatusBar,
