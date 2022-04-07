@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import Image from 'next/image';
 
 import {
-  Link as LinkIcon,
+  Link as AccountBoxIcon,
   Delete as DeleteIcon,
   Favorite as HeartIcon,
   FavoriteBorder as HeartIconNoLife,
@@ -126,6 +126,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             justifyContent: 'center',
             color: '#0a8fe8',
             gap: '3px',
+            marginLeft: '10px',
           }}
         >
           {character.current_san_points === 0 ? (
@@ -143,8 +144,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            marginLeft: '8px',
-            marginTop: '5px'
+            marginTop: '10px',
           }}
         >
           </div>
@@ -155,7 +155,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            marginTop: '10px'
+            marginTop: '10px',
           }}
         >
           <div>
@@ -165,7 +165,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
               target="_blank"
               className={classes.btn}
             >
-              <LinkIcon />
+              <AccountBoxIcon />
             </Button>
           </div>
           <div>
